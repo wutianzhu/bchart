@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\BChart\BChart\BChart\bin\BChart.dll.config
+C:\Users\Administrator\Desktop\BChart\BChart\BChart\bin\BChart.dll
+C:\Users\Administrator\Desktop\BChart\BChart\BChart\bin\BChart.pdb
+C:\Users\Administrator\Desktop\BChart\BChart\BChart\bin\BChart.xml
+C:\Users\Administrator\Desktop\BChart\BChart\BChart\obj\Debug\BChart.Resources.resources
+C:\Users\Administrator\Desktop\BChart\BChart\BChart\obj\Debug\BChart.vbproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\BChart\BChart\BChart\obj\Debug\BChart.dll
+C:\Users\Administrator\Desktop\BChart\BChart\BChart\obj\Debug\BChart.xml
+C:\Users\Administrator\Desktop\BChart\BChart\BChart\obj\Debug\BChart.pdb

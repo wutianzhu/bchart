@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{7284C137-DBC2-40C2-9101-52EE099F50E1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BChart</RootNamespace>
+    <AssemblyName>BChart</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BChart.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>BChart.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\custom.css" />
+    <Content Include="css\Normalize.css" />
+    <Content Include="img\dtgj\beijing.png" />
+    <Content Include="img\dtgj\diantizengzhangjidiushilv.png" />
+    <Content Include="img\dtgj\diqufangwen.png" />
+    <Content Include="img\dtgj\jixiucishu.png" />
+    <Content Include="img\dtgj\pingtaidiantiguzhanglv.png" />
+    <Content Include="img\dtgj\pingtaidiantitailiang.png" />
+    <Content Include="img\dtgj\pingtaishishixinxi.png" />
+    <Content Include="img\dtgj\pingtaizengzhangxinxi.png" />
+    <Content Include="img\dtgj\pingtaizhucerenshu.png" />
+    <Content Include="img\dtgj\qiyefenbu.png" />
+    <Content Include="img\dtgj\qiyefenbu2.png" />
+    <Content Include="img\dtgj\tailiangfenbu.png" />
+    <Content Include="img\dtgj\tailiangfenbu2.png" />
+    <Content Include="img\dtgj\weibaocishu.png" />
+    <Content Include="img\dtgj\weibaoqiye.png" />
+    <Content Include="img\dtgj\xuanzhong.png" />
+    <Content Include="img\dtgj\xuanzhong2.png" />
+    <Content Include="img\dtgj\yonghuzengzhanglv.png" />
+    <Content Include="img\dtgj\zhengchangweibaolv.png" />
+    <Content Include="img\qy\beijing2.png" />
+    <Content Include="img\qy\diantifenbu.png" />
+    <Content Include="img\qy\diantifenbu2.png" />
+    <Content Include="img\qy\diantifenbudian.png" />
+    <Content Include="img\qy\gongsixiangmushu.png" />
+    <Content Include="img\qy\jishilv.png" />
+    <Content Include="img\qy\jixiucishu.png" />
+    <Content Include="img\qy\kapian.png" />
+    <Content Include="img\qy\kapian2.png" />
+    <Content Include="img\qy\nianjianbaobiao.png" />
+    <Content Include="img\qy\pingtaidiantiguzhangzoushi.png" />
+    <Content Include="img\qy\pingtaishishixinxi.png" />
+    <Content Include="img\qy\qiu.png" />
+    <Content Include="img\qy\renyuanfenbu.png" />
+    <Content Include="img\qy\renyuanfenbu2.png" />
+    <Content Include="img\qy\renyuanfenbudian.png" />
+    <Content Include="img\qy\renyuanfenbuzhishixian.png" />
+    <Content Include="img\qy\shishishuju.png" />
+    <Content Include="img\qy\weibaocishu.png" />
+    <Content Include="img\qy\weibaodiantitailiang.png" />
+    <Content Include="img\qy\yuangongfuwupaihang.png" />
+    <Content Include="img\qy\yuangongrenshu.png" />
+    <Content Include="img\qy\yuanhuan.png" />
+    <Content Include="img\qy\zhengchangweibaolv.png" />
+    <Content Include="img\qy\zhishixian.png" />
+    <Content Include="index.html" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\highcharts-3d.js" />
+    <Content Include="js\highcharts-3d.src.js" />
+    <Content Include="js\highcharts-more.js" />
+    <Content Include="js\highcharts-more.src.js" />
+    <Content Include="js\highcharts.js" />
+    <Content Include="js\highcharts.src.js" />
+    <Content Include="js\modules\accessibility.js" />
+    <Content Include="js\modules\accessibility.src.js" />
+    <Content Include="js\modules\annotations.js" />
+    <Content Include="js\modules\annotations.src.js" />
+    <Content Include="js\modules\boost-canvas.js" />
+    <Content Include="js\modules\boost-canvas.src.js" />
+    <Content Include="js\modules\boost.js" />
+    <Content Include="js\modules\boost.src.js" />
+    <Content Include="js\modules\broken-axis.js" />
+    <Content Include="js\modules\broken-axis.src.js" />
+    <Content Include="js\modules\bullet.js" />
+    <Content Include="js\modules\bullet.src.js" />
+    <Content Include="js\modules\data.js" />
+    <Content Include="js\modules\data.src.js" />
+    <Content Include="js\modules\drag-panes.js" />
+    <Content Include="js\modules\drag-panes.src.js" />
+    <Content Include="js\modules\drilldown.js" />
+    <Content Include="js\modules\drilldown.src.js" />
+    <Content Include="js\modules\export-data.js" />
+    <Content Include="js\modules\export-data.src.js" />
+    <Content Include="js\modules\exporting.js" />
+    <Content Include="js\modules\exporting.src.js" />
+    <Content Include="js\modules\funnel.js" />
+    <Content Include="js\modules\funnel.src.js" />
+    <Content Include="js\modules\gantt.js" />
+    <Content Include="js\modules\gantt.src.js" />
+    <Content Include="js\modules\grid-axis.js" />
+    <Content Include="js\modules\grid-axis.src.js" />
+    <Content Include="js\modules\heatmap.js" />
+    <Content Include="js\modules\heatmap.src.js" />
+    <Content Include="js\modules\histogram-bellcurve.js" />
+    <Content Include="js\modules\histogram-bellcurve.src.js" />
+    <Content Include="js\modules\item-series.js" />
+    <Content Include="js\modules\item-series.src.js" />
+    <Content Include="js\modules\no-data-to-display.js" />
+    <Content Include="js\modules\no-data-to-display.src.js" />
+    <Content Include="js\modules\offline-exporting.js" />
+    <Content Include="js\modules\offline-exporting.src.js" />
+    <Content Include="js\modules\oldie.js" />
+    <Content Include="js\modules\oldie.src.js" />
+    <Content Include="js\modules\overlapping-datalabels.js" />
+    <Content Include="js\modules\overlapping-datalabels.src.js" />
+    <Content Include="js\modules\parallel-coordinates.js" />
+    <Content Include="js\modules\parallel-coordinates.src.js" />
+    <Content Include="js\modules\pareto.js" />
+    <Content Include="js\modules\pareto.src.js" />
+    <Content Include="js\modules\sankey.js" />
+    <Content Include="js\modules\sankey.src.js" />
+    <Content Include="js\modules\series-label.js" />
+    <Content Include="js\modules\series-label.src.js" />
+    <Content Include="js\modules\solid-gauge.js" />
+    <Content Include="js\modules\solid-gauge.src.js" />
+    <Content Include="js\modules\static-scale.js" />
+    <Content Include="js\modules\static-scale.src.js" />
+    <Content Include="js\modules\stock.js" />
+    <Content Include="js\modules\stock.src.js" />
+    <Content Include="js\modules\streamgraph.js" />
+    <Content Include="js\modules\streamgraph.src.js" />
+    <Content Include="js\modules\sunburst.js" />
+    <Content Include="js\modules\sunburst.src.js" />
+    <Content Include="js\modules\tilemap.js" />
+    <Content Include="js\modules\tilemap.src.js" />
+    <Content Include="js\modules\treemap.js" />
+    <Content Include="js\modules\treemap.src.js" />
+    <Content Include="js\modules\variable-pie.js" />
+    <Content Include="js\modules\variable-pie.src.js" />
+    <Content Include="js\modules\variwide.js" />
+    <Content Include="js\modules\variwide.src.js" />
+    <Content Include="js\modules\vector.js" />
+    <Content Include="js\modules\vector.src.js" />
+    <Content Include="js\modules\windbarb.js" />
+    <Content Include="js\modules\windbarb.src.js" />
+    <Content Include="js\modules\wordcloud.js" />
+    <Content Include="js\modules\wordcloud.src.js" />
+    <Content Include="js\modules\xrange.js" />
+    <Content Include="js\modules\xrange.src.js" />
+    <Content Include="js\themes\avocado.js" />
+    <Content Include="js\themes\avocado.src.js" />
+    <Content Include="js\themes\dark-blue.js" />
+    <Content Include="js\themes\dark-blue.src.js" />
+    <Content Include="js\themes\dark-green.js" />
+    <Content Include="js\themes\dark-green.src.js" />
+    <Content Include="js\themes\dark-unica.js" />
+    <Content Include="js\themes\dark-unica.src.js" />
+    <Content Include="js\themes\gray.js" />
+    <Content Include="js\themes\gray.src.js" />
+    <Content Include="js\themes\grid-light.js" />
+    <Content Include="js\themes\grid-light.src.js" />
+    <Content Include="js\themes\grid.js" />
+    <Content Include="js\themes\grid.src.js" />
+    <Content Include="js\themes\sand-signika.js" />
+    <Content Include="js\themes\sand-signika.src.js" />
+    <Content Include="js\themes\skies.js" />
+    <Content Include="js\themes\skies.src.js" />
+    <Content Include="js\themes\sunset.js" />
+    <Content Include="js\themes\sunset.src.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\highcharts-3d.js.map" />
+    <Content Include="js\highcharts-more.js.map" />
+    <Content Include="js\highcharts.js.map" />
+    <Content Include="js\modules\accessibility.js.map" />
+    <Content Include="js\modules\annotations.js.map" />
+    <Content Include="js\modules\boost-canvas.js.map" />
+    <Content Include="js\modules\boost.js.map" />
+    <Content Include="js\modules\broken-axis.js.map" />
+    <Content Include="js\modules\bullet.js.map" />
+    <Content Include="js\modules\data.js.map" />
+    <Content Include="js\modules\drag-panes.js.map" />
+    <Content Include="js\modules\drilldown.js.map" />
+    <Content Include="js\modules\export-data.js.map" />
+    <Content Include="js\modules\exporting.js.map" />
+    <Content Include="js\modules\funnel.js.map" />
+    <Content Include="js\modules\gantt.js.map" />
+    <Content Include="js\modules\grid-axis.js.map" />
+    <Content Include="js\modules\heatmap.js.map" />
+    <Content Include="js\modules\histogram-bellcurve.js.map" />
+    <Content Include="js\modules\item-series.js.map" />
+    <Content Include="js\modules\no-data-to-display.js.map" />
+    <Content Include="js\modules\offline-exporting.js.map" />
+    <Content Include="js\modules\oldie.js.map" />
+    <Content Include="js\modules\overlapping-datalabels.js.map" />
+    <Content Include="js\modules\parallel-coordinates.js.map" />
+    <Content Include="js\modules\pareto.js.map" />
+    <Content Include="js\modules\sankey.js.map" />
+    <Content Include="js\modules\series-label.js.map" />
+    <Content Include="js\modules\solid-gauge.js.map" />
+    <Content Include="js\modules\static-scale.js.map" />
+    <Content Include="js\modules\stock.js.map" />
+    <Content Include="js\modules\streamgraph.js.map" />
+    <Content Include="js\modules\sunburst.js.map" />
+    <Content Include="js\modules\tilemap.js.map" />
+    <Content Include="js\modules\treemap.js.map" />
+    <Content Include="js\modules\variable-pie.js.map" />
+    <Content Include="js\modules\variwide.js.map" />
+    <Content Include="js\modules\vector.js.map" />
+    <Content Include="js\modules\windbarb.js.map" />
+    <Content Include="js\modules\wordcloud.js.map" />
+    <Content Include="js\modules\xrange.js.map" />
+    <Content Include="js\themes\avocado.js.map" />
+    <Content Include="js\themes\dark-blue.js.map" />
+    <Content Include="js\themes\dark-green.js.map" />
+    <Content Include="js\themes\dark-unica.js.map" />
+    <Content Include="js\themes\gray.js.map" />
+    <Content Include="js\themes\grid-light.js.map" />
+    <Content Include="js\themes\grid.js.map" />
+    <Content Include="js\themes\sand-signika.js.map" />
+    <Content Include="js\themes\skies.js.map" />
+    <Content Include="js\themes\sunset.js.map" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>14580</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14580/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

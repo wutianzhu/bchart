@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta http-equiv="X-UA-Compatible" content="Chrome=1 ,IE=edge">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <title>电梯管家数据管理平台</title>
+    <link href="css/Normalize.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+</head>
+<body id="dtgj">
+    <div class="dtgjCOn">
+   
+        <div>
+            <!--1-1-->
+            <div>
+                <!--1-1-1-->
+                <div >
+                    <div>本日</div><div>本月</div><div>本周</div><div>本年</div>
+                </div><!--1-1-2--><p>
+                    <span>666666</span><span>888888</span><span>999999</span>
+                </p><!--1-1-3--><p>
+                                    <span>666666</span><span>888888</span><span>999999</span>
+                </p>
+                
+            </div><!--1-2--><div>
+               <!--1-2-1-->
+                    <div>
+                        <div>本月</div><div>本周</div>
+                    </div>
+               <!--1-2-2-->
+               <div id="userGrowthRate"></div>
+            </div><!--1-3--><div>
+             <!--1-3-1-->
+                    <div>
+                        <div>本月</div><div>本周</div>
+                    </div>
+             <!--1-3-2-->
+               <div id="elevatorIncreaseLossRate"></div>
+            </div>
+        </div><!--第二个--><div>
+             <!--第二个2-1-->
+             <div>
+          
+                <div>       <!--2-1-1-->
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <!--2-1-2-->
+                    <div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+              </div><!--第二个2-2--><div>
+                    <div class="particleBac" ></div>
+                    <div class="map"></div>
+                    <div>
+                        <div><img src="img/dtgj/qiyefenbu2.png" /><span>企业分布</span></div>
+                        <div><img src="img/dtgj/tailiangfenbu.png" /><span>台量分布</span></div>
+                    </div>
+               </div><!--第二个2-3--><div>
+
+               </div>
+        </div><!--第三个--><div>
+            <div>
+                <ul id="roll" >
+                    <li><span>wwwwwwww</span><span>03-10 15:30</span></li>
+                    <li><span>aaaaaaaaaa</span><span>03-10 15:30</span></li>
+                    <li><span>qqqqqqqq</span><span>03-10 15:30</span></li>
+                    <li><span>rrrrrr</span><span>03-10 15:30</span></li>
+                    <li><span>ssssss</span><span>03-10 15:30</span></li>
+                    <li><span>hhhhhhhhh</span><span>03-10 15:30</span></li>
+                    <li style="display:none;"><span>wwwwwwww</span><span>03-10 15:30</span></li>
+                    <li style="display:none;"><span>aaaaaaaaaa</span><span>03-10 15:30</span></li>
+                    <li style="display:none;" ><span>qqqqqqqq</span><span>03-10 15:30</span></li>
+                </ul>
+        </div><!--第三个3-2--><div>
+               <!--3-2-1-->
+                  <div>
+                      <div>本月</div><div>本周</div>
+                  </div>
+                 <!--3-2-2-->
+                  <div id="rateNormalMaintenance"></div>
+        </div><!--第三个3-3--><div>
+                  <div>
+                      <div>本月</div><div>本周</div>
+                  </div>
+               <!--3-3-2-->
+                  <div id="elevatorFailureRatePlatform"></div>
+        </div>
+        </div>
+    </div>
+    <script src="js/custom.js"></script>
+    <script src="js/canvas-particle.js"></script>
+    <script type="text/javascript" >
+        /*背景粒子效果*/
+        window.onload = function () {
+            //配置
+            var config = {
+                vx: 4,	//小球x轴速度,正为右，负为左
+                vy: 4,	//小球y轴速度
+                height: 2,	//小球高宽，其实为正方形，所以不宜太大
+                width: 2,
+                count: 200,		//点个数
+                color: "121, 162, 185", 	//点颜色
+                stroke: "130,255,255", 		//线条颜色
+                dist: 6000, 	//点吸附距离
+                e_dist: 20000, 	//鼠标吸附加速距离
+                max_conn: 10 	//点到点最大连接数
+            }
+
+            //调用
+            CanvasParticle(config);
+        }
+
+    //3-1滚动
+
+
+    function Notice() {
+
+        var elemsSize = $("#roll").children("li").size();
+        //判断滚动元素不少于3个才开始滚动
+        if (elemsSize <= 6) {
+            return false;
+        } else {
+            //克隆第一个li
+            var elems = $("#roll li:eq(0)").clone();
+            //淡出第一个li
+            $("#roll li:eq(0)").fadeTo(1000, 0.1);
+
+            //等待淡出效果结束
+            setTimeout(function () {
+                //删掉第一个li
+                $("#roll li:eq(0)").remove();
+                // 将克隆的li追加到整个列表的末尾
+                elems.appendTo($("#roll"));
+                // 计算可见元素个数
+                var VisibleElemsSize = $("#roll li:visible()").size();
+                if (VisibleElemsSize = 5) {
+                    // 防止可见元素小于3个
+                    $("#roll li:eq(5)").show();
+                }
+                // 从第四个li开始全部隐藏
+                $("#roll li:gt(5)").hide();
+            }, 1000);
+        };
+    }
+
+    //setInterval("Notice()", 4000);
+
+        $(document).ready(function () {
+
+            //1-2
+            (function () {
+                var chart = {
+                    type: 'column',
+                    margin: 75,
+                    backgroundColor: "transparent",
+                    options3d: {
+                        enabled: true,
+                        alpha: 10,
+                        beta: 25,
+                        depth: 70
+                    }
+                };
+                var credits = {
+                    enabled: false
+                };
+                var title = {
+                    text: ''
+                };
+
+                var xAxis = {
+                    categories: Highcharts.getOptions().lang.shortMonths
+                };
+                var yAxis = {
+                    title: {
+                        text: null
+                    }
+                };
+                var series = [{
+                    name: 'Sales',
+                    data: [2, 3, null, 4, 0, 5, 1, 4, 6, 3]
+                }];
+
+                var json = {};
+                json.chart = chart;
+                json.title = title;
+                json.credits = credits;
+                json.xAxis = xAxis;
+                json.yAxis = yAxis;
+                json.series = series;
+                $('#userGrowthRate').highcharts(json);
+            })();
+            //1-3
+            (function () {
+                var chart = {
+                    type: 'areaspline',
+                    backgroundColor: "transparent"
+                };
+                var title = {
+                    text: 'Average fruit consumption during one week'
+                };
+
+                var legend = {
+                    layout: 'vertical',
+                    align: 'left',
+                    verticalAlign: 'top',
+                    x: 150,
+                    y: 100,
+                    floating: true,
+                    borderWidth: 1,
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                };
+                var xAxis = {
+                    categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                };
+                var yAxis = {
+                    title: {
+                        text: 'Fruit units'
+                    }
+                };
+                var tooltip = {
+                    shared: true,
+                    valueSuffix: ' units'
+                };
+                var credits = {
+                    enabled: false
+                }
+                var plotOptions = {
+                    areaspline: {
+                        fillOpacity: 0.5
+                    }
+                };
+                var series = [{
+                    name: 'John',
+                    data: [3, 4, 3, 5, 4, 10, 12]
+                }, {
+                    name: 'Jane',
+                    data: [1, 3, 4, 3, 3, 5, 4]
+                }
+                ];
+
+                var json = {};
+                json.chart = chart;
+                json.title = title;
+
+                json.xAxis = xAxis;
+                json.yAxis = yAxis;
+                json.legend = legend;
+                json.plotOptions = plotOptions;
+                json.credits = credits;
+                json.series = series;
+                $('#elevatorIncreaseLossRate').highcharts(json);
+            })();
+
+            //3-2
+            (function () {
+                var chart = {
+                    type: 'column',
+                    backgroundColor: "transparent"
+                };
+                var title = {
+                    text: '每月平均降雨量'
+                };
+
+                var xAxis = {
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    crosshair: true
+                };
+                var yAxis = {
+                    min: 0,
+                    title: {
+                        text: 'Rainfall (mm)'
+                    }
+                };
+                var tooltip = {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                       '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                };
+                var plotOptions = {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                };
+                var credits = {
+                    enabled: false
+                };
+
+                var series = [{
+                    name: 'Tokyo',
+                    data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+                }];
+
+                var json = {};
+                json.chart = chart;
+                json.title = title;
+   
+                json.tooltip = tooltip;
+                json.xAxis = xAxis;
+                json.yAxis = yAxis;
+                json.series = series;
+                json.plotOptions = plotOptions;
+                json.credits = credits;
+                $('#rateNormalMaintenance').highcharts(json);
+            })();
+            //3-3
+            (function () {
+                var chart = {
+                    type: 'area',
+                    backgroundColor: "transparent"
+                };
+                var title = {
+                    text: ''
+                };
+
+                var xAxis = {
+                    categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
+                    tickmarkPlacement: 'on',
+                    title: {
+                        enabled: false
+                    }
+                };
+                var yAxis = {
+                    title: {
+                        text: 'Billions'
+                    },
+                    labels: {
+                        formatter: function () {
+                            return this.value / 1000;
+                        }
+                    }
+                };
+                var tooltip = {
+                    shared: true,
+                    valueSuffix: ' millions'
+                };
+                var plotOptions = {
+                    area: {
+                        stacking: 'normal',
+                        lineColor: '#666666',
+                        lineWidth: 1,
+                        marker: {
+                            lineWidth: 1,
+                            lineColor: '#666666'
+                        }
+                    }
+                };
+                var credits = {
+                    enabled: false
+                };
+                var series = [{
+                    name: 'Asia',
+                    data: [502, 635, 809, 947, 1402, 3634, 5268]
+                }];
+
+                var json = {};
+                json.chart = chart;
+                json.title = title;
+ 
+                json.xAxis = xAxis;
+                json.yAxis = yAxis;
+                json.tooltip = tooltip;
+                json.plotOptions = plotOptions;
+                json.credits = credits;
+                json.series = series;
+                $('#elevatorFailureRatePlatform').highcharts(json);
+            })();
+        });
+    </script>
+
+</body>
+</html>

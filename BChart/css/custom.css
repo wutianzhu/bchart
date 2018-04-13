@@ -1,0 +1,389 @@
+﻿#dtgj {
+    width:100%;
+    height:100%;
+    background:url(../img/dtgj/beijing.png) no-repeat center 0;
+ 
+}
+.dtgjCOn {
+    width:96vw;
+    height:88vh;
+    margin:0 auto;
+    margin-top:5%;
+    background-color:red;
+}
+    .dtgjCOn > div {
+        display:inline-block;
+    }
+    /*公用样式*/
+        .dtgjCOn > div:first-child, .dtgjCOn > div:last-child {
+             width:26.5%;
+             height:100%;
+             background-color:green;
+        }
+        .dtgjCOn > div:first-child>div, .dtgjCOn > div:last-child>div {
+            width:100%;
+            height:33.333333%;
+            background-color:orange;
+        }
+
+            /*.dtgjCOn>div:first-child>div:not(:last-child), .dtgjCOn >div:last-child>div:not(:last-child) {
+                    margin-bottom:4.5%;
+                 }*/
+
+
+        /*第一个框*/
+    .dtgjCOn>div:first-child>div:first-child {
+        background:url(../img/dtgj/pingtaizengzhangxinxi.png)  no-repeat center 0;
+        background-size: 100% 100%;  
+        -moz-background-size: 100% 100%;  
+       -webkit-background-size: 100% 100%;  
+    }
+
+            /*第一个框1-1-1*/
+
+        .dtgjCOn > div:first-child > div:first-child > div:first-child
+        ,.dtgjCOn>div:first-child>div:nth-child(2)>div:first-child
+        ,.dtgjCOn>div:first-child>div:last-child>div:first-child
+        ,.dtgjCOn>div:last-child>div:nth-child(2)>div:first-child
+        ,.dtgjCOn>div:last-child>div:last-child>div:first-child{
+               zoom:1;
+               float:right;
+               margin-top:9%;
+               margin-right:4%;
+               width:295px;
+        }
+        .dtgjCOn > div:first-child > div:first-child > div:first-child:after
+        ,.dtgjCOn>div:first-child>div:nth-child(2)>div:first-child:after
+        ,.dtgjCOn>div:first-child>div:last-child>div:first-child:after
+         ,.dtgjCOn>div:last-child>div:nth-child(2)>div:first-child:after
+         ,.dtgjCOn>div:last-child>div:last-child>div:first-child:after{
+                    content:"";
+                    display:block;
+                    overflow:hidden;
+                    clear:both;
+        }
+        .dtgjCOn > div:first-child > div:first-child > div:first-child>div
+        ,.dtgjCOn>div:first-child>div:nth-child(2)>div:first-child>div
+        ,.dtgjCOn>div:first-child>div:last-child>div:first-child>div
+         ,.dtgjCOn>div:last-child>div:nth-child(2)>div:first-child>div
+        ,.dtgjCOn>div:last-child>div:last-child>div:first-child>div{
+                display:inline-block; 
+                color:#088BFE;
+                border:1px solid #088BFE;
+                padding:4px 14px;
+                font-size:14px;
+                border-radius:7px;
+                cursor:pointer;
+        }
+
+                .dtgjCOn > div:first-child > div:first-child > div:first-child>div:not(:last-child)
+                ,.dtgjCOn>div:first-child>div:nth-child(2)>div:first-child>div:not(:last-child)
+                ,.dtgjCOn>div:first-child>div:last-child>div:first-child>div:not(:last-child) 
+                ,.dtgjCOn>div:last-child>div:nth-child(2)>div:first-child>div:not(:last-child)
+                ,.dtgjCOn>div:last-child>div:last-child>div:first-child>div:not(:last-child) {
+                    margin-right:20px;
+        }
+            .dtgjCOn > div:first-child > div:first-child > div:first-child > div:hover
+            ,.dtgjCOn>div:first-child>div:nth-child(2)>div:first-child>div:hover
+            ,.dtgjCOn>div:first-child>div:last-child>div:first-child>div:hover 
+            ,.dtgjCOn>div:last-child>div:nth-child(2)>div:first-child>div:hover
+            ,.dtgjCOn>div:last-child>div:last-child>div:first-child>div:hover {
+                background:url(../img/dtgj/xuanzhong.png)  no-repeat center 0;
+                color:white;
+            }
+
+             /*第一个框1-1-2*/
+        .dtgjCOn > div:first-child > div:first-child > p {
+            position:absolute;
+            width:25.5%;
+            
+        }
+        .dtgjCOn > div:first-child > div:first-child > p:nth-child(2) {
+         
+            margin-top:5.2%;
+        }
+        .dtgjCOn > div:first-child > div:first-child > p:last-child {
+            margin-top:9.8%;
+        }
+        .dtgjCOn > div:first-child > div:first-child >  p:nth-child(2) > span , .dtgjCOn > div:first-child > div:first-child > p:last-child > span {
+               
+                font-size:160%;
+                color:#2FD0FF;
+                text-align:center;
+                /*position:absolute;*/
+                display:inline-block;
+                width:27.5%;
+                 font-weight:bold;
+                
+        }
+
+            .dtgjCOn > div:first-child > div:first-child >p >span:first-child {
+                    margin-left:3.5%;
+            }
+            .dtgjCOn > div:first-child > div:first-child >p >span:not(:first-child) {
+                    margin-left:5%;
+            }
+
+         /*第一个框1-2*/
+        .dtgjCOn>div:first-child>div:nth-child(2) {
+            background:url(../img/dtgj/yonghuzengzhanglv.png)  no-repeat center 0;
+            background-size: 100% 100%;  
+            -moz-background-size: 100% 100%;  
+            -webkit-background-size: 100% 100%;  
+        }
+        
+
+
+         /*第一个框1-2-1*/
+            .dtgjCOn > div:first-child > div:nth-child(2) > div:first-child
+            ,.dtgjCOn>div:first-child>div:last-child> div:first-child
+            ,.dtgjCOn>div:last-child>div:nth-child(2)>div:first-child
+            ,.dtgjCOn>div:last-child>div:last-child>div:first-child{
+                width:140px !important;
+            }
+           
+          /*第一个框1-2-2*/
+            .dtgjCOn > div:first-child > div:nth-child(2) > div:last-child
+            ,.dtgjCOn > div:first-child > div:last-child > div:last-child
+            ,.dtgjCOn>div:last-child>div:nth-child(2)>div:last-child
+            ,.dtgjCOn>div:last-child>div:last-child>div:last-child {
+                position:absolute;
+                background-color:#abcdef;
+                width:25.5%;
+                height:21%;
+                margin-top:4%;
+            }
+
+        /*第一个框1-3*/
+        .dtgjCOn>div:first-child>div:last-child {
+            background:url(../img/dtgj/diantizengzhangjidiushilv.png)  no-repeat center 0;
+            background-size: 100% 100%;  
+            -moz-background-size: 100% 100%;  
+            -webkit-background-size: 100% 100%;  
+    }
+
+
+      /*第二个框*/
+    .dtgjCOn>div:nth-child(2) {
+         height:88vh;
+        width:39.5%;
+        left:50%;
+        position:absolute;
+        margin-left:-19.5%;
+        background-color:yellow;
+    }
+    /*2-1*/
+        .dtgjCOn > div:nth-child(2) > div:first-child {
+            width:100%;
+            height:18.5%;
+            background-color:pink;
+        }
+
+
+        /*2-1-1*/
+         .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child > div:first-child {
+                background-color:yellow;
+                position:absolute;
+                width:100%;
+                margin-top:3.5%;
+            }
+        .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child >div:first-child> div {
+               height:60px;
+               width:31%;
+               display:inline-block;
+            }
+            .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:not(:first-child) {
+                margin-left:2.5%;
+            }
+        .dtgjCOn > div:nth-child(2) > div:first-child>div:first-child>div:first-child>div:first-child {
+            background:url(../img/dtgj/weibaoqiye.png)  no-repeat center 0;
+            background-size: 100% 100%;  
+            -moz-background-size: 100% 100%;  
+            -webkit-background-size: 100% 100%;  
+        }
+
+        .dtgjCOn > div:nth-child(2) > div:first-child>div:first-child>div:first-child>div:nth-child(2) {
+            background:url(../img/dtgj/pingtaizhucerenshu.png)  no-repeat center 0;
+            background-size: 100% 100%;  
+            -moz-background-size: 100% 100%;  
+            -webkit-background-size: 100% 100%;  
+        }
+        .dtgjCOn > div:nth-child(2) > div:first-child>div:first-child>div:first-child>div:last-child {
+            background:url(../img/dtgj/pingtaidiantitailiang.png)  no-repeat center 0;
+            background-size: 100% 100%;  
+            -moz-background-size: 100% 100%;  
+            -webkit-background-size: 100% 100%;  
+        }
+
+        /*2-1-2*/
+           .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child >div:nth-child(2) {
+                 width:100%;
+                 position:absolute;
+                 margin-top:100px;
+            }
+            .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(2) > div {
+               height:60px;
+               width:31%;
+               display:inline-block;
+            }
+
+            .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child >div:nth-child(2)> div:first-child {
+                    background:url(../img/dtgj/weibaocishu.png)  no-repeat center 0;
+                    background-size: 100% 100%;  
+                    -moz-background-size: 100% 100%;  
+                    -webkit-background-size: 100% 100%;  
+                    margin-left:17%;
+            }
+            .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(2)> div:nth-child(2) {
+                    background:url(../img/dtgj/jixiucishu.png)  no-repeat center 0;
+                    background-size: 100% 100%;  
+                    -moz-background-size: 100% 100%;  
+                    -webkit-background-size: 100% 100%;  
+                    margin-left:2%;
+            }
+
+
+
+       .dtgjCOn > div:nth-child(2) > div:nth-child(2) {
+            width:100%;
+            height:59%;
+            background-color:orange;
+        }
+                 /*第二个框中间那个框*/
+        .particleBac, .map {
+            position:absolute;
+        }
+        .particleBac {
+            width:60%;
+            height:57%;
+            left:50%;
+            top:50%;
+            margin-left:-30%;
+            margin-top:-34%;
+            opacity:0.5;
+            background-color:lightblue;
+        }
+        .map {
+            width:90%;
+            height:52%;
+            z-index:2;
+            left:50%;
+            top:50%;
+            margin-left:-45%;
+            margin-top:-31.5%;
+            background-color:purple;
+        }
+          /*第二个框中间那个框2-2-3*/
+
+        .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child {
+            background-color:darkgreen;
+            position:absolute;
+            margin-top:4%;
+            width:150px;
+            z-index:3;
+        }
+
+        .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child>div {
+        
+            height:40px;
+        }
+
+        .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child>div {
+                    background:url(../img/dtgj/xuanzhong2.png)  no-repeat center 0;
+                    background-size: 100% 100%;  
+                    -moz-background-size: 100% 100%;  
+                    -webkit-background-size: 100% 100%;  
+        }
+
+            .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child > div > img {
+                    margin-left:16%;
+                    margin-top:8%;
+                   position:absolute;
+            }
+
+            .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child > div > span {
+                  font-size:14px; 
+                  background-color:red; 
+                  display:inline-block;
+                  height:30px;
+                  line-height:30px;
+                  width:70px;
+                  text-align:center;
+                  margin-left:29%;
+                  margin-top:6px;
+            }
+
+            .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child > div:first-child > span {
+               color:#01F2F4;
+            }
+
+            .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child > div:last-child > span {
+                   color:#fff;
+            }
+
+       .dtgjCOn > div:nth-child(2) > div:last-child {
+            width:100%;
+            height:22.5%;
+            background-color:#abcdef;
+        }
+
+
+
+      /*第三个框*/
+    .dtgjCOn>div:last-child,.dtgjCOn > div:last-child > div:first-child > ul>li>span:last-child {
+     float:right;
+        zoom:1;
+    }
+    .dtgjCOn>div:last-child:after,.dtgjCOn > div:last-child > div:first-child > ul>li>span:last-child:after{
+        content:"";
+        display:block;
+        overflow:hidden;
+        clear:both;
+}
+          /*第三个框3-1*/
+       .dtgjCOn>div:last-child>div:first-child {
+        background:url(../img/dtgj/pingtaishishixinxi.png)  no-repeat center 0;
+        background-size: 100% 100%;  
+          -moz-background-size: 100% 100%;  
+          -webkit-background-size: 100% 100%;  
+    }
+        .dtgjCOn > div:last-child > div:first-child > ul {
+            position:absolute;
+            margin-top:3.7%;
+            margin-left:3%;
+            width:21%;
+            height:168px;
+            color:#fff;
+            display:block;
+            font-size:13px;
+            background-color:red;
+
+        }
+            .dtgjCOn > div:last-child > div:first-child > ul > li>span {
+                height:15px !important;
+  
+                background-color:yellow;
+            }
+            .dtgjCOn > div:last-child > div:first-child > ul > li,.dtgjCOn > div:last-child > div:first-child > ul > li>span {
+            
+                background-color:green;
+            }
+        .dtgjCOn > div:last-child > div:first-child > ul>li:not(:first-child) {
+            margin-top:15px;
+        }
+
+
+      /*第三个框3-2*/
+         .dtgjCOn>div:last-child>div:nth-child(2) {
+            background:url(../img/dtgj/zhengchangweibaolv.png)  no-repeat center 0;
+            background-size: 100% 100%;  
+            -moz-background-size: 100% 100%;  
+            -webkit-background-size: 100% 100%;  
+    }
+       /*第三个框3-3*/
+       .dtgjCOn>div:last-child>div:last-child {
+            background:url(../img/dtgj/pingtaidiantiguzhanglv.png)  no-repeat center 0;
+            background-size: 100% 100%;  
+            -moz-background-size: 100% 100%;  
+            -webkit-background-size: 100% 100%;  
+    }
