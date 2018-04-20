@@ -176,20 +176,25 @@
                     enabled: false
                 };
                 var title = {
-                    text: ''
+                    text: null
                 };
-
+                var legend = {
+                    enabled: false
+                };
                 var xAxis = {
-                    categories: Highcharts.getOptions().lang.shortMonths
+                    categories: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+                    lineColor: '#000080',
+                    lineWidth: 2
                 };
                 var yAxis = {
+                    className: 'highcharts-color-0',
                     title: {
                         text: null
                     }
                 };
                 var series = [{
                     name: 'Sales',
-                    data: [2, 3, null, 4, 0, 5, 1, 4, 6, 3]
+                    data: [2, 3,  4, 0, 5, 1, 4]
                 }];
 
                 var json = {};
@@ -198,35 +203,281 @@
                 json.credits = credits;
                 json.xAxis = xAxis;
                 json.yAxis = yAxis;
+                json.legend = legend;
                 json.series = series;
                 $('#userGrowthRate').highcharts(json);
             })();
             //1-3
             (function () {
+                var color = ['#FFFD00'];
                 var chart = {
-                    type: 'areaspline',
                     backgroundColor: "transparent"
                 };
                 var title = {
-                    text: 'Average fruit consumption during one week'
-                };
-
-                var legend = {
-                    layout: 'vertical',
-                    align: 'left',
-                    verticalAlign: 'top',
-                    x: 150,
-                    y: 100,
-                    floating: true,
-                    borderWidth: 1,
-                    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+                    text: null
                 };
                 var xAxis = {
-                    categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                    categories: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+                    lineColor: '#0B6DA5',
+                    lineWidth: 1,
+                    tickColor: 'transparent',
+                    labels: {
+                        style: {
+                            'color': '#fff'
+                        }
+                    }
                 };
                 var yAxis = {
                     title: {
-                        text: 'Fruit units'
+                        text: '(%)',
+                        style: {
+                            color: 'white'
+                        },
+                        align: 'high',
+                        offset: 0,
+                        rotation: 0,
+                        y: -15,
+                        x:-10
+                    },
+                    lineColor: '#0B6DA5',
+                    lineWidth: 1,
+                    tickAmount: 4,
+                    gridLineColor: 'transparent',
+                    labels: {
+                        style: {
+                            'color': '#fff'
+                        }
+                    }
+                };
+                var legend = {
+                    enabled: true,
+                    align: 'left',
+                    verticalAlign: 'top',
+                    y: -30,
+                    x: 35,
+                    itemStyle: {
+                        color: '#fff',
+                        fontWeight: 'bold'
+                    }
+                };
+                var tooltip = {
+                    shared: false,
+                    borderRadius: '10',
+                    backgroundColor: '#23548E',
+                    borderColor: 'transparent',
+                    useHTML: true,
+                    headerFormat: '<div style="background-color:#3188D7;color:#fff;width:100%;position:absolute;" >{series.name}</div>',
+                    pointFormat: '<div style="background-color:#23568F;height:30px;line-height:30px; color:#fff;text-align:center;" >{point.y:.1f} %</div>',
+                    valueSuffix: ' units'
+                };
+                var credits = {
+                    enabled: false
+                }
+                var plotOptions = {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true, //是否显示数据标签
+                        }
+                    }
+                };
+                var series = [{
+                    name: '维保电梯增长率',
+                    data: [86, 41, 64, 25, 70, 15,50],
+                    color: '#FFFD00',
+                   
+                    type: 'area',
+                    fillColor: {
+                        linearGradient: [0, 0, 0, 300],
+                        stops: [
+                            [0, color],
+                              [0.5, '#142347'],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    }
+
+                }, {
+                    name: '维保电梯丢失率',
+    
+                    data: [50, 23, 70, 80,63,10, 25],
+                    color: '#00FFFF'
+                }
+                ];
+                var json = {};
+                json.chart = chart;
+                json.title = title;
+                json.legend = legend;
+                json.xAxis = xAxis;
+                json.yAxis = yAxis;
+                json.tooltip = tooltip;
+                json.legend = legend;
+                json.plotOptions = plotOptions;
+                json.credits = credits;
+                json.series = series;
+                $('#elevatorIncreaseLossRate').highcharts(json);
+            })();
+
+            //3-2
+
+            (function () {
+                var colorArr = ['#2CF9CC'];
+                var chart = {
+                    type: 'column',
+                    backgroundColor: "transparent"
+                };
+                var title = {
+                    text: null
+                };
+
+                var xAxis = {
+                    categories: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+                    crosshair: true,
+                    lineColor: '#0B6DA5',
+                    lineWidth: 1,
+                    tickColor: 'transparent',
+                    labels: {
+                        style: {
+                            'color': '#fff'
+                        }
+                    }
+                };
+                var yAxis = {
+                    title: {
+                        text: '(%)',
+                        style: {
+                            color: 'white'
+                        },
+                        align: 'high',
+                        offset: 0,
+                        rotation: 0,
+                        y: -15,
+                        x: -10
+                    },
+                    lineColor: '#0B6DA5',
+                    lineWidth: 1,
+                    tickAmount: 4,
+                    gridLineColor: 'transparent',
+                    labels: {
+                        style: {
+                            'color': '#fff'
+                        }
+                    }
+                };
+
+                var plotOptions = {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0,
+                        dataLabels:{
+                            enabled:true,
+                        }
+                    },
+                    series: {
+                        dataLabels: {
+                     backgroundColor: 'transparent',
+                    enabled: true,
+                    color: '#00FAFC',
+                    format: '{y} %'
+                }
+        }
+                };
+                var credits = {
+                    enabled: false
+                };
+                var tooltip = {
+                    enabled: false
+                };
+
+                var series = [{
+                    name: '正常维保率',
+                    data: [49, 71, 10, 29, 44, 70, 35],
+                    color: {
+                        linearGradient: { x1: 0, y1: 0, x2: 0, y2: 2 },
+                        stops: [
+                                    [0, colorArr],
+                                    [0.5, '#318BCC'],
+                                    [1, colorArr]
+                        ]
+                    }
+                }];
+                var legend = {
+                    enabled: true,
+                    align: 'left',
+                    verticalAlign: 'top',
+                    y: -30,
+                    x: 35,
+                  
+                    itemStyle: {
+                        color: 'transparent'
+                    }
+                };
+                var json = {};
+                json.chart = chart;
+                json.title = title;
+                json.legend = legend;
+              
+                json.tooltip = tooltip;
+                json.xAxis = xAxis;
+                json.yAxis = yAxis;
+                json.series = series;
+                json.plotOptions = plotOptions;
+                json.credits = credits;
+                $('#rateNormalMaintenance').highcharts(json);
+            })();
+
+            //3-3
+
+            (function () {
+                var color = ['#BA00FF'];
+                var chart = {
+                    backgroundColor: "transparent"
+                };
+                var title = {
+                    text: null
+                };
+                var xAxis = {
+                    categories: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+                    lineColor: '#0B6DA5',
+                    lineWidth: 1,
+                    tickColor: 'transparent',
+                    labels: {
+                        style: {
+                            'color': '#fff'
+                        }
+                    }
+                };
+                var yAxis = {
+                    title: {
+                        text: '(%)',
+                        style: {
+                            color: 'white'
+                        },
+                        align: 'high',
+                        offset: 0,
+                        rotation: 0,
+                        y: -15,
+                        x: -10
+                    },
+                    lineColor: '#0B6DA5',
+                    lineWidth: 1,
+                    tickAmount: 4,
+                    gridLineColor: 'transparent',
+                    labels: {
+                        style: {
+                            'color': '#fff'
+                        }
+                    }
+                };
+                var legend = {
+                    enabled: true,
+                    align: 'left',
+                    verticalAlign: 'top',
+                    y: -30,
+                    x: 35,
+                    itemStyle: {
+                        color: '#fff',
+                        fontWeight: 'bold'
                     }
                 };
                 var tooltip = {
@@ -237,149 +488,48 @@
                     enabled: false
                 }
                 var plotOptions = {
-                    areaspline: {
-                        fillOpacity: 0.5
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0,
+                        dataLabels: {
+                            enabled: true, //是否显示数据标签
+                        }
                     }
                 };
                 var series = [{
-                    name: 'John',
-                    data: [3, 4, 3, 5, 4, 10, 12]
-                }, {
-                    name: 'Jane',
-                    data: [1, 3, 4, 3, 3, 5, 4]
+                    name: '平台电梯故障率',
+                    data: [86, 41, 64, 25, 70, 15, 50],
+                    color: '#BA00FF',
+
+                    type: 'area',
+                    fillColor: {
+                        linearGradient: [0, 0, 0, 300],
+                        stops: [
+                            [0, color],
+                              [0.5, '#142347'],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    }
                 }
                 ];
-
                 var json = {};
                 json.chart = chart;
                 json.title = title;
-
+                json.legend = legend;
                 json.xAxis = xAxis;
                 json.yAxis = yAxis;
                 json.legend = legend;
                 json.plotOptions = plotOptions;
                 json.credits = credits;
                 json.series = series;
-                $('#elevatorIncreaseLossRate').highcharts(json);
-            })();
-
-            //3-2
-            (function () {
-                var chart = {
-                    type: 'column',
-                    backgroundColor: "transparent"
-                };
-                var title = {
-                    text: '每月平均降雨量'
-                };
-
-                var xAxis = {
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    crosshair: true
-                };
-                var yAxis = {
-                    min: 0,
-                    title: {
-                        text: 'Rainfall (mm)'
-                    }
-                };
-                var tooltip = {
-                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                       '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
-                    footerFormat: '</table>',
-                    shared: true,
-                    useHTML: true
-                };
-                var plotOptions = {
-                    column: {
-                        pointPadding: 0.2,
-                        borderWidth: 0
-                    }
-                };
-                var credits = {
-                    enabled: false
-                };
-
-                var series = [{
-                    name: 'Tokyo',
-                    data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
-                }];
-
-                var json = {};
-                json.chart = chart;
-                json.title = title;
-   
-                json.tooltip = tooltip;
-                json.xAxis = xAxis;
-                json.yAxis = yAxis;
-                json.series = series;
-                json.plotOptions = plotOptions;
-                json.credits = credits;
-                $('#rateNormalMaintenance').highcharts(json);
-            })();
-            //3-3
-            (function () {
-                var chart = {
-                    type: 'area',
-                    backgroundColor: "transparent"
-                };
-                var title = {
-                    text: ''
-                };
-
-                var xAxis = {
-                    categories: ['1750', '1800', '1850', '1900', '1950', '1999', '2050'],
-                    tickmarkPlacement: 'on',
-                    title: {
-                        enabled: false
-                    }
-                };
-                var yAxis = {
-                    title: {
-                        text: 'Billions'
-                    },
-                    labels: {
-                        formatter: function () {
-                            return this.value / 1000;
-                        }
-                    }
-                };
-                var tooltip = {
-                    shared: true,
-                    valueSuffix: ' millions'
-                };
-                var plotOptions = {
-                    area: {
-                        stacking: 'normal',
-                        lineColor: '#666666',
-                        lineWidth: 1,
-                        marker: {
-                            lineWidth: 1,
-                            lineColor: '#666666'
-                        }
-                    }
-                };
-                var credits = {
-                    enabled: false
-                };
-                var series = [{
-                    name: 'Asia',
-                    data: [502, 635, 809, 947, 1402, 3634, 5268]
-                }];
-
-                var json = {};
-                json.chart = chart;
-                json.title = title;
- 
-                json.xAxis = xAxis;
-                json.yAxis = yAxis;
-                json.tooltip = tooltip;
-                json.plotOptions = plotOptions;
-                json.credits = credits;
-                json.series = series;
                 $('#elevatorFailureRatePlatform').highcharts(json);
             })();
+
+
+
+
+
+          
         });
     </script>
 
