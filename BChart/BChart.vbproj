@@ -83,6 +83,7 @@
   <ItemGroup>
     <Content Include="css\custom.css" />
     <Content Include="css\Normalize.css" />
+    <Content Include="css\style.css" />
     <Content Include="img\dtgj\beijing.png" />
     <Content Include="img\dtgj\diantizengzhangjidiushilv.png" />
     <Content Include="img\dtgj\diqufangwen.png" />

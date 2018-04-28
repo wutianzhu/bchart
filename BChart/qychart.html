@@ -10,9 +10,11 @@
     <title>企业数据报表</title>
     <link href="css/Normalize.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
     <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="js/modules/variable-pie.js"></script>
 </head>
 <body id="qyChart">
 
@@ -21,27 +23,38 @@
              <!--11-->
              <div>
             <!--111--> <div>
-                    <div>1</div><div>2</div>
+                           <div id="maintenanceTheDay"></div><div id="dayFault"></div>
                   </div><!--112--><div>
                     <!--1121--><div>
                            <p><span>45245</span>服务中心项目</p>
-                            <div></div>
+                            <div class="progressbar" data-perc="38">
+                                       <div class="bar color4"><span></span></div>
+                             </div>
                             <p><span>45245</span>已锁定电梯</p>
-                            <div></div>
+                            <div class="progressbar" data-perc="35">
+                               <div class="bar color4"><span></span></div>
+                            </div>
                             <p><span>45245</span>持证员工</p>
-                            <div></div>
+                             <div class="progressbar" data-perc="25">
+                                  <div class="bar color4"><span></span></div>
+                             </div>
                         </div><!--1122--><div>
                              <p>待开始项目<span>45245</span></p>
-                             <div></div>
+                              <div class="progressbar" data-perc="10">
+                                 <div class="bar color4"><span></span></div>
+                              </div>
                              <p>未锁定电梯<span>45245</span></p>
-                             <div></div>
+                              <div class="progressbar" data-perc="30">
+                                     <div class="bar color4"><span></span></div>
+                               </div>
                              <p>证件待审核<span>45245</span></p>
-                             <div></div>
+                               <div class="progressbar" data-perc="15">
+                                   <div class="bar color4"><span></span></div>
+                              </div>
                  </div>
                  </div>
-            </div><!--12--><div>
-  
-            </div><!--13--><div>
+            </div><!--12--><div ><div id="AnnualReport"></div>
+</div><!--13--><div>
                    <ul id="roll">
                       <li><span>wwwwwwww</span><span>03-10 15:30</span></li>
                       <li><span>aaaaaaaaaa</span><span>03-10 15:30</span></li>
@@ -57,7 +70,7 @@
         </div><!--2--><div>
               <!--21-->
                <div>
-                   <div></div><div></div><div></div><div></div><div></div>
+                   <!--211--><div><!--2111--><div class="timer">123456</div></div><!--212--><div><!--2121--><div class="timer">678912</div></div><!--213--><div><!--2131--><div class="timer">456519</div></div><!--214--><div><!--2141--><div class="timer">489264</div></div><!--215--><div><!--2151--><div class="timer">746156</div></div>
                </div><!--22--><div>
                  <!--221--> 
                     <div></div>
@@ -72,7 +85,7 @@
                             <img src="img/qy/yuangongfuwupaihang.png" />  <div><div>本周</div><div>本月</div><div>本年</div></div> 
                         </div>
                   <!--232-->
-                         <div></div>
+                         <div id="staffServiceRankings"></div>  
                  </div>  
         </div><!--3--><div>
                  <!--31-->
@@ -83,28 +96,752 @@
                          <div>本日</div><div>本周</div><div>本月</div><div>本年</div>
                      </div>
                    
-                     <!--312--> <div><!--3121--><div><div></div><p>维保及时率</p></div> <!--3122--><div><div></div><p>维保及时率</p></div> <!--3123--><div><div></div><p>维保及时率</p></div></div>
+                     <!--312--> <div><!--3121--><div><div><!--31211--><div class="Percentage">88</div></div><p>维保及时率</p></div> <!--3122--><div><div><!--31221--><div class="Percentage">92</div></div><p>维修及时率</p></div> <!--3123--><div><div><!--31231--><div class="Percentage">68</div></div><p>年检及时率</p></div></div>
                   </div><!--32--><div>
                      <!--321-->
                     <div>
                          <div>本月</div><div>本周</div>
                      </div>
                     <!--322-->
-                    <div></div>
+                    <div id="normalMaintenanceRate"></div>
                   </div><!--33--><div>
                       <!--331-->
                     <div>
                         <div>本月</div><div>本周</div>
                     </div>
                     <!--332-->
-                      <div></div>
+                    <div id="filureRatePlatformElevator"></div>
                   </div>  
         </div>
     </div>
 
  
     <script src="js/custom.js"></script>
+    <script src="js/jquery.countUp.js"></script>
     <script type="text/javascript">
+
+        jQuery(function ($) {
+            $(".timer").countTo({
+                lastSymbol: "", //显示在最后的字符
+                from: 0,  // 开始时的数字
+                speed: 1500,  // 总时间
+                refreshInterval: 100,  // 刷新一次的时间
+                beforeSize: 0, //小数点前最小显示位数，不足的话用0代替 
+                decimals: 0,  // 小数点后的位数，小数做四舍五入
+                onUpdate: function () {
+                },  // 更新时回调函数
+                onComplete: function () {
+                    for (i in arguments) {
+                        //console.log(arguments[i]);
+                    }
+                }
+            });
+        });
+        jQuery(function ($) {
+            $(".Percentage").countTo({
+                lastSymbol: "%", //显示在最后的字符
+                from: 0,  // 开始时的数字
+                speed: 2000,  // 总时间
+                refreshInterval: 100,  // 刷新一次的时间
+                beforeSize: 0, //小数点前最小显示位数，不足的话用0代替 
+                decimals: 2,  // 小数点后的位数，小数做四舍五入
+                onUpdate: function () {
+                },  // 更新时回调函数
+                onComplete: function () {
+                    for (i in arguments) {
+                        //console.log(arguments[i]);
+                    }
+                }
+            });
+        });
+
+
+        /***********************实时数据饼图--1****************************/
+        (function () {
+
+
+            var colors = ['#04C8FF'];
+            Highcharts.chart('maintenanceTheDay', {
+                chart: {
+                    type: 'variablepie',
+                    backgroundColor: "transparent"
+                },
+                title: {
+                    useHTML: true,
+                    verticalAlign: 'center',
+                    text: '<div style="text-align:center;color:white;" >' + Highcharts.numberFormat(this.y, 0) + '</div><div style="font-size:12px;color:white;" >当日维保</div>',
+                    y: 75
+                },
+                plotOptions: {
+                    variablepie: {
+                        borderColor: 'transparent'
+                    }
+                },
+                credits: {
+                    enabled: false
+                },
+               tooltip: {
+                    shared: false,
+                    borderRadius: '10',
+                    backgroundColor: '#23548E',
+                    borderColor: 'transparent',
+                    useHTML: true,
+                    pointFormat: '<div style="background-color:#3188D7;color:#fff;text-align:center; width:100px;position:absolute;" >{point.name}</div><div style="background-color:#23568F;width:100px;margin-top:20px; color:#fff;text-align:center;" >{point.y:.1f} %</div>',
+                    valueSuffix: ' units'
+                },
+                series: [{
+                    minPointSize: 10,
+                    innerSize: '40%',
+                    zMin: 0,
+                    name: '当日维保',
+                    data: [{
+                        name: '',
+                        y: 50,
+                        z: 1,
+                        color: '#09517A',
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }, {
+                        name: '已完成',
+                        y: 30,
+                        z: 120,
+                        color: '#01E2E6',
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }, {
+                        name: '未开始',
+                        y: 20,
+                        z: 80,
+                        color: {
+                            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 2 },
+                            stops: [
+                                [0, colors],
+                                [0.5, '#0499FE'],
+                                [1, colors]
+                            ]
+                        },
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }, {
+                        name: '维修中',
+                        y: 10,
+                        z: 60,
+                        color: '#9F33FD',
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }]
+                }]
+            });
+
+        })();
+
+        /***********************实时数据饼图--2****************************/
+
+        (function () {
+
+
+            var colors = ['#04C8FF'];
+            Highcharts.chart('dayFault', {
+                chart: {
+                    type: 'variablepie',
+                    backgroundColor: "transparent"
+                },
+                title: {
+                    useHTML: true,
+                    verticalAlign: 'center',
+                    text: '<div style="text-align:center;color:white;" >' + Highcharts.numberFormat(this.y, 0) + '</div><div style="font-size:12px;color:white;" >当日故障</div>',
+                    y: 75
+                },
+
+                credits: {
+                    enabled: false
+                },
+                plotOptions: {
+                    variablepie: {
+                        borderColor: 'transparent'
+                    }
+                },
+                tooltip: {
+                    shared: false,
+                    borderRadius: '10',
+                    backgroundColor: '#23548E',
+                    borderColor: 'transparent',
+                    useHTML: true,
+                    pointFormat: '<div style="background-color:#3188D7;color:#fff;text-align:center; width:100px;position:absolute;" >{point.name}</div><div style="background-color:#23568F;width:100px;margin-top:20px; color:#fff;text-align:center;" >{point.y:.1f} %</div>',
+                    valueSuffix: ' units'
+                },
+                series: [{
+                    minPointSize: 10,
+                    innerSize: '40%',
+                    zMin: 0,
+                    name: 'countries',
+                    data: [{
+                        name: '',
+                        y: 50,
+                        z:1,
+                        color: '#09517A',
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }, {
+                        name: '已完成',
+                        y: 30,
+                        z: 120,
+                        color: '#01E2E6',
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }, {
+                        name: '未开始',
+                        y: 20,
+                        z: 80,
+                        color: {
+                            linearGradient: { x1: 0, y1: 0, x2: 0, y2: 2 },
+                            stops: [
+                                [0, colors],
+                                [0.5, '#0499FE'],
+                                [1, colors]
+                            ]
+                        },
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }, {
+                        name: '维修中',
+                        y: 10,
+                        z: 60,
+                        color: '#9F33FD',
+                        dataLabels: {
+                            enabled: false
+                        }
+                    }]
+                }]
+            });
+
+        })();
+
+        //1-2
+        (function () {
+            var color = ['#47E3CD'];
+            var colorArr = ['#00D7FD'];
+            var chart = {
+                backgroundColor: "transparent",
+                marginTop:60
+            };
+            var title = {
+                text: null
+            };
+            var xAxis = {
+                categories: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                lineColor: '#0B6DA5',
+                lineWidth: 1,
+                tickColor: 'transparent',
+                labels: {
+                    style: {
+                        'color': '#fff'
+                    }
+                }
+            };
+            var yAxis = {
+                title: {
+                    text: '(台)',
+                    style: {
+                        color: 'white'
+                    },
+                    align: 'high',
+                    offset: 0,
+                    rotation: 0,
+                    y: -20,
+                    x: -10
+                },
+                lineColor: '#0B6DA5',
+                lineWidth: 1,
+                tickAmount: 4,
+                gridLineColor: 'transparent',
+                labels: {
+                    style: {
+                        'color': '#fff'
+                    }
+                }
+            };
+            var legend = {
+                enabled: true,
+                align: 'left',
+                verticalAlign: 'top',
+                y: -10,
+                x: 35,
+                itemStyle: {
+                    color: '#fff',
+                    fontWeight: 'bold'
+                }
+            };
+            var tooltip = {
+                shared: false,
+                borderRadius: '10',
+                backgroundColor: '#23548E',
+                borderColor: 'transparent',
+                useHTML: true,
+                headerFormat: '<div style="background-color:#3188D7;color:#fff;text-align:center; width:100px;position:absolute;" >{series.name}</div>',
+                pointFormat: '<div style="background-color:#23568F;width:100px;margin-top:20px; color:#fff;text-align:center;" >{point.y:.1f} %</div>',
+                valueSuffix: ' units'
+            };
+            var credits = {
+                enabled: false
+            }
+            var plotOptions = {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: false, //是否显示数据标签
+                    }
+                }
+            };
+            var series = [{
+                name: '应完成',
+                data: [86, 41, 64, 25, 70, 15, 50, 86, 41, 64, 25, 70],
+                color: '#47E3CD',
+
+                type: 'area',
+                fillColor: {
+                    linearGradient: [0, 0, 0, 300],
+                    stops: [
+                        [0, color],
+                          [0.5, '#142347'],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    ]
+                }
+
+            }, {
+                name: '已完成',
+                type: 'column',
+                data: [50, 23, 70, 80, 63, 10, 25, 15, 50, 86, 41, 64],
+                color: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1.8 },
+                    stops: [
+                                [0, colorArr],
+                                [0.5, '#00A0FF'],
+                                [1, colorArr]
+                    ]
+                }
+            }
+            ];
+            var json = {};
+            json.chart = chart;
+            json.title = title;
+            json.legend = legend;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;
+            json.tooltip = tooltip;
+            json.legend = legend;
+            json.plotOptions = plotOptions;
+            json.credits = credits;
+            json.series = series;
+            $('#AnnualReport').highcharts(json);
+        })();
+
+
+
+        //2-3
+        (function () {
+
+            var colorArrs = ['#00D8FD'];
+            var chart = {
+                backgroundColor: "transparent",
+                type: 'column',
+                marginTop:60
+            };
+            var title = {
+                text: null
+            };
+            var xAxis = {
+                categories: ["朱锦", "陈琳", "黄骅", "李晓忠", "田霍州", "周朝", "阮合川","郑立","方世超","冯振","冉玲","李建","熊晨"],
+                lineColor: '#0B6DA5',
+                lineWidth: 1,
+                tickColor: 'transparent',
+                labels: {
+                    style: {
+                        'color': '#fff'
+                    }
+                }
+            };
+            var yAxis = [{
+                title: {
+                    text: '(分)',
+                    style: {
+                        color: 'white'
+                    },
+                    align: 'high',
+                    offset: 0,
+                    rotation: 0,
+                    y: -15,
+                    x: -15
+                },
+                tickPositions: [0,25, 50, 75,100],
+                lineColor: '#0B6DA5',
+                lineWidth: 1,
+                tickAmount: 4,
+                gridLineColor: 'transparent',
+                labels: {
+                    style: {
+                        'color': '#fff'
+                    }
+                }
+            }, {
+                title: {
+                    text: '(次)',
+                    style: {
+                        color: 'white'
+                    },
+                    align: 'high',
+                    offset: 0,
+                    rotation: 0,
+                    y:-15,
+                    x: 15
+                },
+                tickPositions: [0, 50, 100, 150, 200],
+                opposite: true,
+                lineColor: '#0B6DA5',
+                lineWidth:1,
+                tickAmount: 4,
+                gridLineColor: 'transparent',
+                labels: {
+                    style: {
+                        'color': '#fff'
+                    }
+                }
+            }];
+            var legend = {
+                enabled: true,
+                align: 'right',
+                verticalAlign: 'top',
+                y: -30,
+                x: -230,
+                itemStyle: {
+                    color: '#fff',
+                    fontWeight: 'bold'
+                }
+            };
+            var tooltip = {
+                shared: false,
+                borderRadius: '10',
+                backgroundColor: '#23548E',
+                borderColor: 'transparent',
+                useHTML: true,
+                headerFormat: '<div style="background-color:#3188D7;color:#fff;text-align:center; width:100px;position:absolute;" >{series.name}</div>',
+                pointFormat: '<div style="background-color:#23568F;width:100px;margin-top:20px; color:#fff;text-align:center;" >{point.y:f} </div>',
+                valueSuffix: ' units'
+            };
+            var credits = {
+                enabled: false
+            }
+            var plotOptions = {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: false, //是否显示数据标签
+                    }
+                }
+            };
+            var series = [{
+                name: '平均分',
+                data: [86, 41, 15, 70, 50, 64, 25, 70, 50, 64, 64, 25, 70],
+                groupPadding: 0.3,
+                borderRadius: 5,
+                pointWidth:11,
+                color: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1.8 },
+                    stops: [
+                                [0, colorArrs],
+                                [0.5, '#009FFE'],
+                                [1, colorArrs]
+                    ]
+                }
+            }, {
+                name: '维保次数',
+                data: [50, 23, 70, 80, 63, 10, 25, 70, 80, 63, 63, 10, 25],
+                color: '#9F33FD',
+                groupPadding: 0.3,
+                borderRadius: 5,
+                pointWidth: 11
+            }
+            ];
+            var json = {};
+            json.chart = chart;
+
+            json.title = title;
+            json.legend = legend;
+            json.xAxis = xAxis;
+
+            json.yAxis = yAxis;
+            json.tooltip = tooltip;
+            json.legend = legend;
+            json.plotOptions = plotOptions;
+            json.credits = credits;
+            json.series = series;
+            $('#staffServiceRankings').highcharts(json);
+
+        })();
+
+
+        //3-2
+        (function () {
+            var color = ['#47E3CD'];
+            var chart = {
+                backgroundColor: "transparent"
+            };
+            var title = {
+                text: null
+            };
+            var xAxis = {
+                categories: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+                lineColor: '#0B6DA5',
+                lineWidth: 1,
+                tickColor: 'transparent',
+                labels: {
+                    style: {
+                        'color': '#fff'
+                    }
+                }
+            };
+            var yAxis = {
+                title: {
+                    text: '(%)',
+                    style: {
+                        color: 'white'
+                    },
+                    align: 'high',
+                    offset: 0,
+                    rotation: 0,
+                    y: -15,
+                    x: -10
+                },
+                lineColor: '#0B6DA5',
+                lineWidth: 1,
+                tickAmount: 4,
+                gridLineColor: 'transparent',
+                labels: {
+                    style: {
+                        'color': '#fff'
+                    }
+                }
+            };
+            var legend = {
+                enabled: true,
+                align: 'left',
+                verticalAlign: 'top',
+                y: -30,
+                x: 35,
+                itemStyle: {
+                    color: '#fff',
+                    fontWeight: 'bold'
+                }
+            };
+            var tooltip = {
+                shared: false,
+                borderRadius: '10',
+                backgroundColor: '#23548E',
+                borderColor: 'transparent',
+                useHTML: true,
+                headerFormat: '<div style="background-color:#3188D7;color:#fff;text-align:center; width:100px;position:absolute;" >{series.name}</div>',
+                pointFormat: '<div style="background-color:#23568F;width:100px;margin-top:20px; color:#fff;text-align:center;" >{point.y:.1f} %</div>',
+                valueSuffix: ' units'
+            };
+            var credits = {
+                enabled: false
+            }
+            var plotOptions = {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true, //是否显示数据标签
+                    }
+                }
+            };
+            var series = [{
+                name: '正常维保率',
+                data: [86, 41, 64, 25, 70, 15, 50],
+                type: 'area',
+                color: '#47E3CD',
+                fillColor: {
+                    linearGradient: [0, 0, 0, 300],
+                    stops: [
+                        [0, color],
+                          [0.5, '#142347'],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    ]
+                }
+
+            }, {
+                name: '超期',
+
+                data: [50, 23, 70, 80, 63, 10, 25],
+                color: '#FECC00'
+            }
+            ];
+            var json = {};
+            json.chart = chart;
+            json.title = title;
+            json.legend = legend;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;
+            json.tooltip = tooltip;
+            json.legend = legend;
+            json.plotOptions = plotOptions;
+            json.credits = credits;
+            json.series = series;
+            $('#normalMaintenanceRate').highcharts(json);
+        })();
+
+
+        //3-3
+
+        (function () {
+            var color = ['#F8BC02'];
+            var chart = {
+                backgroundColor: "transparent"
+            };
+            var title = {
+                text: null
+            };
+            var xAxis = {
+                categories: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+                lineColor: '#0B6DA5',
+                lineWidth: 1,
+                tickColor: 'transparent',
+                labels: {
+                    style: {
+                        'color': '#fff'
+                    }
+                }
+            };
+            var yAxis = {
+                title: {
+                    text: '(%)',
+                    style: {
+                        color: 'white'
+                    },
+                    align: 'high',
+                    offset: 0,
+                    rotation: 0,
+                    y: -15,
+                    x: -10
+                },
+                lineColor: '#0B6DA5',
+                lineWidth: 1,
+                tickAmount: 4,
+                gridLineColor: 'transparent',
+                labels: {
+                    style: {
+                        'color': '#fff'
+                    }
+                }
+            };
+            var legend = {
+                enabled: true,
+                align: 'left',
+                verticalAlign: 'top',
+                y: -30,
+                x: 35,
+                itemStyle: {
+                    color: '#fff',
+                    fontWeight: 'bold'
+                }
+            };
+            var tooltip = {
+                shared: false,
+                borderRadius: '10',
+                backgroundColor: '#23548E',
+                borderColor: 'transparent',
+                useHTML: true,
+                headerFormat: '<div style="background-color:#3188D7;color:#fff;text-align:center; width:100px;position:absolute;" >{series.name}</div>',
+                pointFormat: '<div style="background-color:#23568F;width:100px;margin-top:20px; color:#fff;text-align:center;" >{point.y:.1f} %</div>',
+                valueSuffix: ' units'
+            };
+            var credits = {
+                enabled: false
+            }
+            var plotOptions = {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true, //是否显示数据标签
+                    }
+                }
+            };
+            var series = [{
+                name: '平台电梯故障走势',
+                data: [86, 41, 64, 25, 70, 15, 50],
+                color: '#F8BC02',
+
+                type: 'area',
+                fillColor: {
+                    linearGradient: [0, 0, 0, 300],
+                    stops: [
+                        [0, color],
+                          [0.5, '#142347'],
+                        [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                    ]
+                }
+            }
+            ];
+            var json = {};
+            json.chart = chart;
+            json.title = title;
+            json.legend = legend;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;
+            json.tooltip = tooltip;
+            json.legend = legend;
+            json.plotOptions = plotOptions;
+            json.credits = credits;
+            json.series = series;
+            $('#filureRatePlatformElevator').highcharts(json);
+        })();
+
+        /***********************************进度条*********************************************/
+        $(function () {
+
+
+
+            $('.progressbar').each(function () {
+
+                var t = $(this),
+
+                dataperc = t.attr('data-perc'),
+
+                barperc = Math.round(dataperc * 5.56);
+
+                t.find('.bar').animate({ width: barperc }, dataperc * 25);
+
+                t.find('.label').append('<div class="perc"></div>');
+
+
+
+                function perc() {
+
+                    var length = t.find('.bar').css('width'),
+
+                    perc = Math.round(parseInt(length) / 5.56),
+
+                    labelpos = (parseInt(length) - 2);
+
+                    t.find('.label').css('left', labelpos);
+
+                    t.find('.perc').text(perc + '%');
+                }
+                perc();
+                setInterval(perc, 0);
+            });
+        });
+
 
     </script>
 

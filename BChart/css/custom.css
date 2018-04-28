@@ -6,6 +6,11 @@
    display:none;
 }
 
+
+#filureRatePlatformElevator .highcharts-legend-item{
+   display:none;
+}
+
 /**********************************/
 #dtgj {
     width:100%;
@@ -18,7 +23,7 @@
     height:88vh;
     margin:0 auto;
     margin-top:5%;
-    background-color:red;
+ 
 }
     .dtgjCOn > div {
         display:inline-block;
@@ -27,7 +32,7 @@
         .dtgjCOn > div:first-child, .dtgjCOn > div:last-child {
              width:26.5%;
              height:100%;
-             background-color:green;
+         
         }
         .dtgjCOn > div:first-child>div, .dtgjCOn > div:last-child>div {
             width:100%;
@@ -61,11 +66,28 @@
         ,.qyChartCon > div:last-child > div:last-child > div:first-child
         ,.qyChartCon > div:nth-child(2)>div:last-child>div:first-child>div{
                zoom:1;
+               z-index:22;
                float:right;
                margin-top:9%;
                margin-right:4%;
                width:295px;
         }
+
+       .dtgjCOn > div:first-child > div:first-child > div:first-child>div
+        ,.dtgjCOn>div:first-child>div:nth-child(2)>div:first-child>div
+        ,.dtgjCOn>div:first-child>div:last-child>div:first-child>div
+        ,.dtgjCOn>div:last-child>div:nth-child(2)>div:first-child>div
+        ,.dtgjCOn>div:last-child>div:last-child>div:first-child>div
+        ,.qyChartCon > div:last-child > div:first-child >div:first-child>div
+        ,.qyChartCon > div:last-child > div:nth-child(2) > div:first-child>div
+        ,.qyChartCon > div:last-child > div:last-child > div:first-child>div
+        ,.qyChartCon > div:nth-child(2)>div:last-child>div:first-child>div>div{
+             position:absolute;
+             z-index:22;
+        }
+
+
+
         .dtgjCOn > div:first-child > div:first-child > div:first-child:after
         ,.dtgjCOn>div:first-child>div:nth-child(2)>div:first-child:after
         ,.dtgjCOn>div:first-child>div:last-child>div:first-child:after
@@ -175,7 +197,6 @@
            
           /*第一个框1-2-2*/
             .dtgjCOn > div:first-child > div:nth-child(2) > div:last-child
-            ,.dtgjCOn>div:last-child>div:nth-child(2)>div:last-child
             ,.dtgjCOn>div:last-child>div:last-child>div:last-child
             , .dtgjCOn > div:first-child > div:last-child > div:last-child {
                 position:absolute;
@@ -201,19 +222,19 @@
         left:50%;
         position:absolute;
         margin-left:-19.5%;
-        background-color:yellow;
+    
     }
     /*2-1*/
         .dtgjCOn > div:nth-child(2) > div:first-child {
             width:100%;
             height:18.5%;
-            background-color:pink;
+         
         }
 
 
         /*2-1-1*/
          .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child > div:first-child {
-                background-color:yellow;
+             
                 position:absolute;
                 width:100%;
                 margin-top:3.5%;
@@ -232,7 +253,22 @@
             -moz-background-size: 100% 100%;  
             -webkit-background-size: 100% 100%;  
         }
+        /*<!--2-1-1-1-->*/
+            .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:first-child>div
+            , .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child > div:first-child > div:nth-child(2)>div 
+            ,.dtgjCOn > div:nth-child(2) > div:first-child > div:first-child >  div:first-child > div:last-child>div
+            ,.dtgjCOn > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(2) > div:first-child>div
+            , .dtgjCOn > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(2) > div:nth-child(2)>div {
+            color:#00FFFF;
+            width:45%;
+            height:40%;
+            margin-top:-3%;
+            font-size:21px;
+            font-weight:bold;
+            text-align:center;
+            margin-left:45%;
 
+            }
         .dtgjCOn > div:nth-child(2) > div:first-child>div:first-child>div:first-child>div:nth-child(2) {
             background:url(../img/dtgj/pingtaizhucerenshu.png)  no-repeat center 0;
             background-size: 100% 100%;  
@@ -278,37 +314,37 @@
        .dtgjCOn > div:nth-child(2) > div:nth-child(2) {
             width:100%;
             height:59%;
-            background-color:orange;
+          
         }
                  /*第二个框中间那个框*/
         .particleBac, .map {
             position:absolute;
         }
         .particleBac {
-            width:60%;
-            height:57%;
+            width:115%;
+            height:65%;
             left:50%;
             top:50%;
-            margin-left:-30%;
-            margin-top:-34%;
-            opacity:0.5;
-            background-color:lightblue;
+ margin-left:-55%;
+            margin-top:-40%;
+        
+          
         }
         .map {
-            width:90%;
-            height:52%;
+            width:115%;
+            height:65%;
             z-index:2;
             left:50%;
             top:50%;
-            margin-left:-45%;
-            margin-top:-31.5%;
-            background-color:purple;
+            margin-left:-55%;
+            margin-top:-40%;
+      
         }
           /*第二个框中间那个框2-2-3*/
 
         .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child
         ,.qyChartCon > div:nth-child(2)>div:nth-child(2)>div:last-child {
-            background-color:darkgreen;
+  
             cursor:pointer;
             position:absolute;
             margin-top:4%;
@@ -316,8 +352,8 @@
             z-index:3;
         }
 
-        .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child>div
-        ,.qyChartCon > div:nth-child(2)>div:nth-child(2)>div:last-child>div {
+        .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child>div:first-child
+        ,.qyChartCon > div:nth-child(2)>div:nth-child(2)>div:last-child>div{
                     height:40px;
                     background:url(../img/dtgj/xuanzhong2.png)  no-repeat center 0;
                     background-size: 100% 100%;  
@@ -335,7 +371,7 @@
             .dtgjCOn > div:nth-child(2) > div:nth-child(2) > div:last-child > div > span
              ,.qyChartCon > div:nth-child(2)>div:nth-child(2)>div:last-child>div>span {
                   font-size:14px; 
-                  background-color:red; 
+           
                   display:inline-block;
                   height:30px;
                   line-height:30px;
@@ -359,12 +395,21 @@
        .dtgjCOn > div:nth-child(2) > div:last-child {
             width:100%;
             height:22.5%;
-            background-color:#abcdef;
+            position:absolute;
+            z-index:10;
+      
+        }
+        .dtgjCOn > div:nth-child(2) > div:last-child > img {
+            margin-top:-5%;
+            position:absolute;
+        }
+        #regionalVisit {
+            width:100%;
+            height:100%;
         }
 
-
-
       /*第三个框*/
+
     .dtgjCOn>div:last-child
     ,.dtgjCOn > div:last-child > div:first-child > ul>li>span:last-child
     ,.qyChartCon  > div:first-child> div:last-child > ul>li>span:last-child{
@@ -396,19 +441,18 @@
             color:#fff;
             display:block;
             font-size:13px;
-            background-color:red;
+      
 
         }
             .dtgjCOn > div:last-child > div:first-child > ul > li>span
             ,.qyChartCon  > div:first-child> div:last-child > ul > li>span {
                 height:15px !important;
   
-                background-color:yellow;
+      
             }
             .dtgjCOn > div:last-child > div:first-child > ul > li
             ,.dtgjCOn > div:last-child > div:first-child > ul > li>span {
             
-                background-color:green;
             }
         .dtgjCOn > div:last-child > div:first-child > ul>li:not(:first-child){
             margin-top:15px;
@@ -422,6 +466,15 @@
             -moz-background-size: 100% 100%;  
             -webkit-background-size: 100% 100%;  
     }
+            .dtgjCOn > div:last-child > div:nth-child(2) > div:last-child {
+                position:absolute;
+                width:23%;
+                height:21%;
+                margin-top:3.5%;
+                margin-left:1%;
+            }
+
+
        /*第三个框3-3*/
        .dtgjCOn>div:last-child>div:last-child {
             background:url(../img/dtgj/pingtaidiantiguzhanglv.png)  no-repeat center 0;
@@ -444,7 +497,7 @@
     height:96vh;
     margin:0 auto;
     margin-top:1.3%;
-   background-color:#abcdef;
+
 }
     .qyChartCon > div {
         display:inline-block;
@@ -455,35 +508,38 @@
         width:27%;
         height:100%;
         zoom:1;
-        background-color:red;
+
         
     }
 
      /********111*********/
       .qyChartCon > div:first-child > div:first-child > div:first-child {
 
-          background-color:green;
+      
+         zoom:-1;
           position:absolute;
           margin-top:2.5%;
-          height:17%;
-          margin-left:1.5%;
-          width:23%;
+          height:20%;
+       
+          width:30%;
         }
-
+        .qyChartCon > div:first-child > div:first-child > div:first-child > div {
+          zoom:-1;
+        }
         .qyChartCon > div:first-child > div:first-child > div:first-child > div {
             height:100%;
             width:48%;
             display:inline-block;
-            background-color:orange;
+  
         }
         .qyChartCon > div:first-child > div:first-child > div:first-child > div:not(:first-child) {
-                margin-left:3%;
+       
             }
 
         /********112*********/
         .qyChartCon > div:first-child > div:first-child > div:nth-child(2) {
             margin-left:2%;
-            background-color:purple;
+          
             width:22.5%;
             height:12%;
             margin-top:12%;
@@ -498,7 +554,7 @@
             .qyChartCon > div:first-child > div:first-child > div:nth-child(2) > div {
                 height:100%;
                 width:48%;
-                background-color:green;
+              
             }
                 .qyChartCon > div:first-child > div:first-child > div:nth-child(2) > div:last-child {
                     margin-left:4%;
@@ -506,11 +562,12 @@
                 .qyChartCon > div:first-child > div:first-child > div:nth-child(2) > div > div {
                     height:10%;
                     width:100%;
-                    background-color:#abcdef;
+                 
                 }
                 .qyChartCon > div:first-child > div:first-child > div:nth-child(2) > div > div {
                     margin-top:2%;
                     margin-bottom:3%;
+                    background-color:red;
                 }
        /********1121*********/
                  .qyChartCon > div:first-child > div:first-child > div:nth-child(2) > div:first-child>p {
@@ -558,7 +615,15 @@
             -webkit-background-size: 100% 100%;  
             height:31%;
              width:100%;
+            
         }
+            .qyChartCon > div:first-child > div:nth-child(2) > div {
+                height:24%;
+                width:25%;
+                margin-left:1%;
+                margin-top:2%;
+                position:absolute;
+            }
     /*************13***************/
         .qyChartCon  > div:first-child> div:last-child {
             background:url(../img/qy/pingtaishishixinxi.png)  no-repeat center 0;
@@ -579,7 +644,7 @@
         }
    /***********2**********/
   .qyChartCon > div:nth-child(2){
-        background-color:#fff;
+
         height:95vh;
         position:absolute;
         width:42.5%;
@@ -590,7 +655,7 @@
     }
   /***********2-1**********/
   .qyChartCon > div:nth-child(2)>div:first-child{
-      background-color:yellow;
+
       width:100%;
       height:10%;
       margin-top:10%;
@@ -609,6 +674,21 @@
             background-size: 100% 100%;  
             -moz-background-size: 100% 100%;  
             -webkit-background-size: 100% 100%;  
+    }
+ /***********2111**********/
+       .qyChartCon > div:nth-child(2) > div:first-child > div:first-child>div 
+       ,.qyChartCon > div:nth-child(2) > div:first-child > div:nth-child(2)>div
+       ,.qyChartCon > div:nth-child(2) > div:first-child > div:nth-child(3)>div
+       ,.qyChartCon > div:nth-child(2) > div:first-child > div:nth-child(4)>div
+       ,.qyChartCon > div:nth-child(2) > div:first-child > div:nth-child(5)>div {
+          color:#2FD0FF;
+          font-size:21px;
+          width:100%;
+          height:60%;
+          font-weight:bold;
+          text-align:center;
+          line-height:260%;
+       
     }
   /***********212**********/
       .qyChartCon > div:nth-child(2) > div:first-child > div:nth-child(2) {
@@ -640,7 +720,7 @@
     }
   /***********2-2**********/
   .qyChartCon > div:nth-child(2)>div:nth-child(2){
-      background-color:orange;
+
       width:100%;
       height:57%;
     }
@@ -650,7 +730,7 @@
     }
   /***********2-3**********/
   .qyChartCon > div:nth-child(2)>div:last-child{
-      background-color:red;
+
       width:100%;
       height:25%;
     }
@@ -659,6 +739,26 @@
         margin-top:1% !important;
         margin-right:0px !important;
     }
+  /*********************2-3-1***********************/
+        .qyChartCon > div:nth-child(2)>div:last-child>div:first-child>div>div:nth-child(2){
+            margin-left:9%;
+        }
+        .qyChartCon > div:nth-child(2)>div:last-child>div:first-child>div>div:nth-child(3){
+            margin-left:18%;
+        }
+
+
+
+
+/*********************************232************************************/
+  .qyChartCon > div:nth-child(2)>div:last-child> div:nth-child(2){
+      position:absolute;
+      width:100%;
+      height:24%;
+      margin-top:-5%;
+    }
+
+
 
  /***********3**********/
   .qyChartCon > div:last-child {
@@ -679,6 +779,27 @@
             height:31%;
              width:100%;
         }
+    /******************3111****************************/
+            .qyChartCon > div:last-child > div:first-child > div:first-child > div:nth-child(2)
+            ,.qyChartCon > div:last-child > div:nth-child(2) > div:first-child> div:nth-child(2)
+            ,.qyChartCon > div:last-child > div:last-child > div:first-child> div:nth-child(2)
+            ,.dtgjCOn > div:first-child > div:first-child > div:first-child> div:nth-child(2)
+            ,.dtgjCOn>div:first-child>div:nth-child(2)>div:first-child> div:nth-child(2)
+            ,.dtgjCOn>div:first-child>div:last-child> div:first-child> div:nth-child(2)
+            ,.dtgjCOn>div:last-child>div:nth-child(2)>div:first-child> div:nth-child(2)
+            ,.dtgjCOn>div:last-child>div:last-child>div:first-child> div:nth-child(2){
+                margin-left:4%;
+            }
+            .qyChartCon > div:last-child > div:first-child > div:first-child > div:nth-child(3)
+            ,.dtgjCOn > div:first-child > div:first-child > div:first-child> div:nth-child(3) {
+                margin-left:8%;
+            }
+            .qyChartCon > div:last-child > div:first-child > div:first-child > div:nth-child(4)
+            ,.dtgjCOn > div:first-child > div:first-child > div:first-child> div:nth-child(4) {
+                margin-left:12%;
+            }
+
+
       /*************312-4***************/
             .qyChartCon > div:last-child > div:first-child > div:nth-child(2) {
                 position:absolute;
@@ -686,34 +807,58 @@
                 width:22%;
                 margin-top:4.3%;
                 margin-left:2%;
-                background-color:green;
+         
             }
 
             .qyChartCon > div:last-child > div:first-child > div:nth-child(2) > div {
                 width:32%;
                 height:100%;
                 display:inline-block;
-                background-color:yellow;
+         
             }
                 .qyChartCon > div:last-child > div:first-child > div:nth-child(2) > div > div {
                     width:100%;
                     height:80%;
-                    background:url(../img/qy/yuanhuan.png)  no-repeat center 0;
+                    background:url(../img/qy/yuanhuan.gif)  no-repeat center 0;
                     background-size: 100% 100%;  
                     -moz-background-size: 100% 100%;  
                     -webkit-background-size: 100% 100%; 
-                    background-color:orange;
+         
                 }
+
+
                 .qyChartCon > div:last-child > div:first-child > div:nth-child(2) > div > p {
                     text-align:center;
                     color:#03DCE0;
-                    font-size:13px;
+                    font-size:16px;
                     margin-top:7%;
+                    font-weight:800;
                 }
 
                 .qyChartCon > div:last-child > div:first-child > div:nth-child(2) > div:not(:first-child) {
                     margin-left:0.7%;
                 }
+
+
+            /*************31211-3***************/
+            .qyChartCon > div:last-child > div:first-child > div:nth-child(2) > div > div:first-child
+            ,.qyChartCon > div:last-child > div:first-child > div:nth-child(2) > div > div:nth-child(2)
+            ,.qyChartCon > div:last-child > div:first-child > div:nth-child(2) > div > div:last-child{
+                color:#00FFFF;
+                font-size:21px;
+                text-align:center;
+                height:80%;
+                font-weight:bold;
+                line-height:720%;
+
+            }
+
+
+
+
+
+
+
     /*************32***************/
         .qyChartCon  > div:last-child> div:nth-child(2) {
             background:url(../img/qy/zhengchangweibaolv.png)  no-repeat center 0;
@@ -725,6 +870,19 @@
              width:100%;
                margin-top:1%;
         }
+/*******************322**************************/
+
+            .qyChartCon > div:last-child > div:nth-child(2) > div:nth-child(2) {
+                position:absolute;
+                width:25%;
+                height:26%;
+                margin-top:2.5%;
+                margin-left:1%;
+              
+             
+            }
+
+
     /*************33***************/
         .qyChartCon  > div:last-child> div:last-child {
             background:url(../img/qy/pingtaidiantiguzhangzoushi.png)  no-repeat center 0;
@@ -734,4 +892,13 @@
             height:33.5%;
              width:100%;
              margin-top:2%;
+        }
+    /*************332***************/
+        .qyChartCon  > div:last-child> div:last-child > div:nth-child(2){
+                position:absolute;
+                width:25%;
+                height:24%;
+                margin-top:4%;
+                margin-left:1%;
+               
         }
